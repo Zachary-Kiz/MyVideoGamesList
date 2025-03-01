@@ -1,0 +1,16 @@
+.mvgl_navbar {
+    display: block;
+    text-align: right;
+    margin-right: 10rem;
+    padding: 0.4rem;
+}
+
+.mvgl_navbar_item {
+    display: inline-block;
+    margin-left: 0.25rem;
+    color:inherit;
+}
+
+.mvgl_navbar_item:hover {
+    color:white
+}

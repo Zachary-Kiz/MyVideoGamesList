@@ -1,0 +1,8 @@
+.mvgl_button {
+    background-color: #ea377a;
+    color: white;
+    font-size: inherit;
+    padding: .375rem .75rem;
+    border-radius: 5px;
+    border: 0px;
+}
