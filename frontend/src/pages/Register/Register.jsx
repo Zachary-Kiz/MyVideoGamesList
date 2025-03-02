@@ -1,6 +1,7 @@
 import './Register.css'
 import Input from '../../components/Input/Input';
-import Button from '../../components/Button/Button'
+import Button from '../../components/Button/Button';
+import createUser from '../../api/createUser'
 
 function Register() {
 
@@ -8,8 +9,8 @@ function Register() {
         e.preventDefault()
         const formData = new FormData(e.target)
         const payload = Object.fromEntries(formData)
-
-        console.log(payload)
+        delete payload['password2']
+        createUser(payload)
     }
 
     return (
@@ -17,10 +18,10 @@ function Register() {
             <form onSubmit={submitForm}>
                 <div className='register_content'>
                     <h1>Register</h1>
-                    <Input placeholder={"Username"}></Input>
-                    <Input placeholder={"Email"} />
-                    <Input placeholder="Password"/>
-                    <Input placeholder="Re-enter Password"/>
+                    <Input name={"username"} placeholder={"Username"}></Input>
+                    <Input name={"email"} placeholder={"Email"} />
+                    <Input name={"password"} placeholder="Password"/>
+                    <Input name={"password2"} placeholder="Re-enter Password"/>
                     <Button>Register</Button>
                 </div>
             </form>

@@ -1,6 +1,7 @@
 import './Login.css'
 import Input from '../../components/Input/Input';
-import Button from '../../components/Button/Button'
+import Button from '../../components/Button/Button';
+import login from '../../api/login';
 
 function Login() {
 
@@ -8,8 +9,7 @@ function Login() {
         e.preventDefault()
         const formData = new FormData(e.target)
         const payload = Object.fromEntries(formData)
-
-        console.log(payload)
+        login(payload)
     }
 
     return (
@@ -17,8 +17,8 @@ function Login() {
             <form onSubmit={submitForm}>
                 <div className='register_content'>
                     <h1>Login</h1>
-                    <Input placeholder={"Email / Username"} />
-                    <Input placeholder="Password"/>
+                    <Input name={"username"} placeholder={"Email / Username"} />
+                    <Input name={"password"} placeholder="Password"/>
                     <Button>Login</Button>
                 </div>
             </form>
