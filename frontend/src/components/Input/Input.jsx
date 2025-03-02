@@ -6,7 +6,7 @@ function Input({placeholder, minText}) {
             <input name={placeholder} placeholder={placeholder} className="mvgl_input"></input>
             {minText && <small>{minText}</small>}
         </div>
-)
+    )
 }
 
 export default Input;
