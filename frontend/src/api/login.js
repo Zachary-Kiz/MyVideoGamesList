@@ -1,8 +1,8 @@
 const login = async (data) => {
-    console.log(data)
     const url = import.meta.env.VITE_API_URL + '/api/user/login'
-    await fetch(url, {
+    const response = await fetch(url, {
         method: 'POST',
+        credentials: 'include',
         headers: {
             'Content-Type': 'application/json',  // Specify content type as JSON
         },
@@ -10,7 +10,7 @@ const login = async (data) => {
     })
     .then(response => {
         if (response.ok) {
-            return response.status;  // Parse the JSON response if successful
+            return response.status;
         } else {
             throw new Error('Request failed');
         }
@@ -18,6 +18,7 @@ const login = async (data) => {
     .catch(error => {
         console.error('Error:', error);  // Handle any errors
     });
+
 
 }
 
